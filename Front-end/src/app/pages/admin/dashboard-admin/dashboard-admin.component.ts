@@ -30,5 +30,15 @@ export class DashboardAdminComponent {
     },()=>{
       
     })
-  }
+
+//   onLoaded(evt:any)
+// {
+//   let img = document.querySelector('img');
+//   let canvas = document.querySelector('#output');
+//   let ctx = canvas.getContext('2d');
+//   ctx.fillStyle = '#fff';
+//   ctx.fillRect(0,0,759,759);
+//   ctx.drawImage(img, 0, 250);}
+}
+
 }

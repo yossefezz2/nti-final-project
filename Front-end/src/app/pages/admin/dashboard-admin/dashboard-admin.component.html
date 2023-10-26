@@ -2,11 +2,12 @@
     <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
             <div class="col" *ngFor="let item of posts">
-                <div class="card h-100 shadow-sm "> <img src="{{item.itemImg}}" class="card-img-top img" alt="...">
+                <div class="card h-100 shadow-sm "> <img src="{{item.itemImg}}" class="card-img-top img" 
+                style="    width: 100%; height: 36vh !important;" alt="...">
                     <div class="card-body">
-                        <div class="clearfix mb-3"> <span
+                        <div class="clearfix mb-2"> <span
                                 class="float-start badge rounded-pill bg-primary">{{item.title}}</span> <span
-                                class="float-end price-hp">{{item.price}}&pound;;</span> </div>
+                                class="float-end price-hp">{{item.price}}&euro;</span> </div>
                         <h5 class="card-title">
                             <div id="summary">
                                 <p class="collapse" id="collapseSummary">
@@ -17,7 +18,7 @@
                             </div>
                         </h5>
 
-                        <div class="text-center my-4">
+                        <div class="text-center mt-4">
                             <a routerLink="update/{{item._id}}" class="btn btn-warning mx-3">update item</a>
                             <a (click)="handelDelete(item._id)" class="btn btn-danger mx-3">delete item</a>
                         </div>

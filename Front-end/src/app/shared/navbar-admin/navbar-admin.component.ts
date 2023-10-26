@@ -11,7 +11,7 @@ export class NavbarAdminComponent {
   handlLogout(){
     localStorage.removeItem('token');
     localStorage.removeItem('userType');
-    this.router.navigateByUrl('/')
+    this.router.navigateByUrl('/login')
     setTimeout(() => {
       window.location.reload();
     }, 10);

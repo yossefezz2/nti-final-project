@@ -75,7 +75,10 @@ const userSchema = mongoose.Schema({
         enum:["user", "admin"],
         required: true,
         default: "user"
-    },
+    },userImg:{
+        type:String,
+        trim:true,
+    }
 
 }, {
     timestamps: true

@@ -24,6 +24,8 @@ export class MangeUserComponent {
   ngOnInit(): void {
     this.globalService.getUsers().subscribe(data => {
       this.posts = data.data;
+      console.log(this.posts);
+      
     },(err)=>{
       console.log(err.error);
       
