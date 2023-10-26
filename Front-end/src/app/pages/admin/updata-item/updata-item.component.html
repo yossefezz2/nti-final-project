@@ -1,0 +1,110 @@
+<section class="vh-100" style="background-color: lightgrey; min-height: 112vh;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-9">
+  
+          <h1 class="text-white mb-4">UpdateItem</h1>
+          <form #addForm="ngForm" (ngSubmit)="handelSubmit(addForm)">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body">
+  
+                <div class="row align-items-center pt-3 pb-3">
+                  <div class="col-md-3 ps-5">
+  
+                    <h6 class="mb-0">title</h6>
+  
+                  </div>
+                  <div class="col-md-9 pe-5">
+  
+                    <input type="text" class="form-control form-control-lg"  [(ngModel)]="model.title" name="title"
+                      required />
+                    <!-- <div class="text-danger" *ngIf="addForm.submitted && model.title.invalid">
+                      <div *ngIf="title.errors?.['required']">title is required</div>
+                    </div> -->
+                  </div>
+                </div>
+  
+                <hr class="mx-n3">
+  
+                <div class="row align-items-center py-2">
+                  <div class="col-md-3 ps-5">
+  
+                    <h6 class="mb-0">type</h6>
+  
+                  </div>
+                  <div class="col-md-9 pe-5">
+  
+                    <input type="text" class="form-control form-control-lg" placeholder="" [(ngModel)]="model.type"
+                      name="type" required />
+                    <!-- <div class="text-danger" *ngIf="addForm.submitted && type.invalid">
+                      <div *ngIf="type.errors?.['required']">type is required</div>
+                    </div> -->
+  
+                  </div>
+                </div>
+  
+                <hr class="mx-n3">
+  
+                <div class="row align-items-center py-2">
+                  <div class="col-md-3 ps-5">
+  
+                    <h6 class="mb-0">content</h6>
+  
+                  </div>
+                  <div class="col-md-9 pe-5">
+  
+                    <textarea class="form-control" rows="3" placeholder="Message sent to the employer"
+                      [(ngModel)]="model.content" name="content" required></textarea>
+                      <!-- <div class="text-danger" *ngIf="addForm.submitted && content.invalid">
+                        <div *ngIf="content.errors?.['required']">content is required</div>
+                      </div> -->
+                  </div>
+                </div>
+  
+                <hr class="mx-n3">
+                <div class="row align-items-center pt-3 pb-3">
+                  <div class="col-md-3 ps-5">
+  
+                    <h6 class="mb-0">price</h6>
+  
+                  </div>
+                  <div class="col-md-9 pe-5">
+  
+                    <input type="text" class="form-control form-control-lg" [(ngModel)]="model.price" name="price" required/>
+                    <!-- <div class="text-danger" *ngIf="addForm.submitted && price.invalid">
+                      <div *ngIf="price.errors?.['required']">price is required</div>
+                    </div> -->
+                  </div>
+                </div>
+                <hr class="mx-n3">
+                <div class="row align-items-center py-2">
+                  <div class="col-md-3 ps-5">
+  
+                    <h6 class="mb-0">Upload img</h6>
+  
+                  </div>
+                  
+                  <div class="col-md-9 pe-5 d-flex justify-content-between">
+                    
+                    <input class="form-control form-control-lg me-4 align-self-center" style="max-height: 50px !important;" id="formFileLg" type="file"
+                      (change)="handelImg($event)" name="img" required/>
+                      <!-- <div class="text-danger" *ngIf="addForm.submitted && img.invalid">
+                        <div *ngIf="img.errors?.['required']">image is required</div>
+                      </div> -->
+                      <img src="{{model.itemImg}}" class="img-thumbnail" style=" width: 200px !important;" alt="">
+                  </div>
+                </div>
+  
+                <hr class="mx-n3">
+  
+                <div class="px-5 py-3 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-warning btn-lg ">Update application</button>
+                </div>
+  
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

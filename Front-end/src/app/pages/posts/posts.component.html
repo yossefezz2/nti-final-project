@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12 text-center" *ngIf="isLoading ; else loading">
+    <img src="assets/PVtR.gif" alt="">
+  </div>
+</div>
+<ng-template #loading>
+  <main>
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+      <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+        <div class="col" *ngFor="let item of posts |
+        paginate: { id: 'foo', itemsPerPage: 10, currentPage: p, totalItems: total }">
+          <div class="card h-100 shadow-sm"> <img src="{{item.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary">{{item.title}}</span>
+                <span class="float-end price-hp">12354.00&euro;</span> </div>
+              <h5 class="card-title"></h5>
+              <div class="text-center my-4"> <a href="#" class="btn btn-warning">Check offer</a> </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <pagination-controls class="text-center"  id="foo"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="9"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next">
+</pagination-controls>
+  </main>
+</ng-template>

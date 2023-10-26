@@ -1,0 +1,22 @@
+#summary {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  #summary p.collapse:not(.show) {
+      height: 42px !important;
+      overflow: hidden;
+    
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;  
+  }
+  
+  #summary p.collapsing {
+      min-height: 42px !important;
+  }
+  /* .img{
+    max-height: 250px !important;
+    min-height: 20rem !important; 
+     max-width: 250px!important;
+  } */

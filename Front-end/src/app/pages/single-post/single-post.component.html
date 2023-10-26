@@ -1,0 +1,16 @@
+<div class="row mt-4 gy-4">
+    <div class="col-12 col-md-3" >
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                {{singlePost?.title}}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{singlePost?.type}}</li>
+                <li class="list-group-item">{{singlePost?.content}}</li>
+                <button class="btn btn-success" routerLink={{singlePost?._id}}> go</button>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
