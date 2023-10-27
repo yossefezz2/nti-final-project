@@ -15,8 +15,13 @@ import { adminActiveGuard } from './guard/canActive/admin-active.guard';
 import { loginActiveGuard } from './guard/canActive/login-active.guard';
 import { userActiveGuard } from './guard/canActive/user-active.guard';
 import { authDeactiveGuard } from './guard/DeActiveted/auth-deactive.guard';
+import { ProfileComponent } from './pages/user/profile/profile.component';
+import { indexGuard } from './guard/canActive/index.guard';
+import { IndexUserComponent } from './pages/user/index-user/index-user.component';
+import { SingleComponent } from './pages/user/single/single.component';
 
 const routes: Routes = [
+  {path: '', canActivate:[indexGuard], component:IndexComponent},
   { path: 'login', canActivate:[loginActiveGuard], component: LoginComponent },
   {path: 'signUp', component: RegistrationComponent},
   {
@@ -30,7 +35,6 @@ const routes: Routes = [
     }]
   },
   { path: 'posts/single', component: SinglePostComponent },
-  { path: 'registration', component: RegistrationComponent },
   {
     path: 'admin', canActivate:[adminActiveGuard] ,children: [{
       path: '',
@@ -55,12 +59,19 @@ const routes: Routes = [
   {
     path: 'user', canActivate:[userActiveGuard], children: [{
       path: '',
-      component: IndexComponent
+      component: IndexUserComponent
     },
     {
       path: 'addItem',
       component: AddItemUserComponent
-    }]
+    },{
+      path:'profile',
+      component:ProfileComponent
+    },{
+      path:'single/:id',
+      component:SingleComponent
+    }
+  ]
   }
 ];
 

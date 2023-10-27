@@ -10,7 +10,8 @@ import { GlobalService } from 'src/app/service/global.service';
 })
 export class SinglItemComponent {
   postId:any 
-  constructor(private auth: AuthService, private router: Router, private activated: ActivatedRoute) { }
+
+  constructor(private auth: AuthService, private globalService:GlobalService, private router: Router, private activated: ActivatedRoute) { }
   model = {
     title: '',
     content: '',
@@ -20,6 +21,17 @@ export class SinglItemComponent {
   }
   singelPost: any
   file: any
+  handelDelete(id: any){
+    this.globalService.deletePost(id).subscribe(data => {
+        // this.posts = this.posts.filter((post: { id: any; }) => post.id!== id);
+        console.log(data);
+        
+    },()=>{
+
+    },()=>{
+      this.router.navigateByUrl('/admin')
+    })
+  }
   ngOnInit() {
     this.activated.paramMap.subscribe(params => {
       // console.log(res)
@@ -29,4 +41,5 @@ export class SinglItemComponent {
       })
     })
   }
+
 }

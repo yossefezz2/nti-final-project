@@ -41,10 +41,11 @@ class adminItem {
             if (!itemUpdate) {
                 throw new error("item not found") ;
             }
-            if (fs.existsSync("./public/" + itemUpdate.itemImg)) {
-
-                fs.unlinkSync("./public/" + itemUpdate.itemImg);
-            }
+            
+            let img =  itemUpdate.itemImg.replace(`http://localhost:3000/`, "")
+                fs.unlinkSync("./public/" + img);
+            
+            
             if (req.file) {
                 let f = uploadHandler.filehendeler(req.file)
                 let img = "http://localhost:3000/" + f.replace(`public\\`, "")

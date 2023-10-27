@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { GlobalService } from 'src/app/service/global.service';
 
 @Component({
-  selector: 'app-dashboard-admin',
-  templateUrl: './dashboard-admin.component.html',
-  styleUrls: ['./dashboard-admin.component.css']
+  selector: 'app-index-user',
+  templateUrl: './index-user.component.html',
+  styleUrls: ['./index-user.component.css']
 })
-export class DashboardAdminComponent {
+export class IndexUserComponent {
   posts: any =[]
   constructor(private globalService: GlobalService) { }
   handelDelete(id: any){
