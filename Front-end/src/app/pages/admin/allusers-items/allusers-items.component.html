@@ -1,0 +1,24 @@
+<main>
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+            <div class="col" *ngFor="let item of posts">
+                <div class="card h-100 shadow-sm "> <img src="{{item.itemImg}}" class="card-img-top img" 
+                style="    width: 100%; height: 36vh !important;" alt="...">
+                    <div class="card-body">
+                        <div class="clearfix mb-2"> <div
+                                class=" badge rounded-pill bg-primary" style="white-space: break-spaces;">{{item.title}}</div> <span
+                                class="float-end price-hp">{{item.price}}&euro;</span> <p>username : {{item.fname}} {{item.lname}}</p></div>
+                        <h5 class="card-title">
+                        </h5>
+
+                        <div class="text-center mt-4">
+                            <a routerLink="/admin/single/{{item._id}}" class="btn btn-warning mx-3">show item</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

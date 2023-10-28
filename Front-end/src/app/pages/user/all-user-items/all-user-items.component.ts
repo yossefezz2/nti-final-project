@@ -21,7 +21,6 @@ export class AllUserItemsComponent {
           })
         })
       }
-      // this.posts = data.data;
     },(err)=>{
       console.log(err.error);
       

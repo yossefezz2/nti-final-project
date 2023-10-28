@@ -6,7 +6,7 @@ var express = require('express');
 const router =express.Router()
 
 router.get("/",userMiddleware,isAdmin, userControlar.showAll )
-router.get("/:", userControlar.single )
+router.get("/:id",userMiddleware,isAdmin, userControlar.single )
 
 router.get("/showAllAdresse", userMiddleware, userControlar.showAllAdresse )
 router.delete("/deleteAddress/:idAddress", userMiddleware, userControlar.deleteAddress )

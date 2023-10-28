@@ -25,6 +25,7 @@ import { UpdateUserComponent } from './pages/user/update-user/update-user.compon
 import { IndexUserComponent } from './pages/user/index-user/index-user.component';
 import { SingleComponent } from './pages/user/single/single.component';
 import { AllUserItemsComponent } from './pages/user/all-user-items/all-user-items.component';
+import { AllusersItemsComponent } from './pages/admin/allusers-items/allusers-items.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AllUserItemsComponent } from './pages/user/all-user-items/all-user-item
     IndexUserComponent,
     SingleComponent,
     AllUserItemsComponent,
+    AllusersItemsComponent,
     
   ],
   imports: [

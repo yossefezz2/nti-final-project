@@ -19,6 +19,7 @@ import { indexGuard } from './guard/canActive/index.guard';
 import { IndexUserComponent } from './pages/user/index-user/index-user.component';
 import { SingleComponent } from './pages/user/single/single.component';
 import { AllUserItemsComponent } from './pages/user/all-user-items/all-user-items.component';
+import { AllusersItemsComponent } from './pages/admin/allusers-items/allusers-items.component';
 
 const routes: Routes = [
   {path: '', canActivate:[indexGuard], component:IndexComponent},
@@ -53,6 +54,9 @@ const routes: Routes = [
     },{
       path:'mange-user',
       component: MangeUserComponent
+    },{
+      path:'getAllUsersItem',
+      component: AllusersItemsComponent
     }
   ]
   },

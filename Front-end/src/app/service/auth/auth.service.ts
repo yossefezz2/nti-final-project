@@ -18,12 +18,15 @@ export class AuthService {
     return this.http.post('http://localhost:3000/apiItem/admin/addTaskImg',item);
   }
   getManyPost():Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/photos');
+    return this.http.get('http://localhost:3000/apiTask/');
   }
   getSinglePost(id:any):Observable<any> {
     return this.http.get('http://localhost:3000/apiTask/'+id);
   }
   UpdateItem(item:any,id:any):Observable<any> {
     return this.http.put('http://localhost:3000/apiItem/admin/editTask/'+id,item);
+  }
+  getSingleUser(id:any):Observable<any> {
+    return this.http.get('http://localhost:3000/apiUser/'+id);
   }
 }

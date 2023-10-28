@@ -1,5 +1,5 @@
 const itemControlar =require("../../app/controlar/item/userItem")
-const {userMiddleware} = require("../../app/middelware/auth.middelware")
+const {userMiddleware,isAdmin} = require("../../app/middelware/auth.middelware")
 const buyedItem =require("../../app/controlar/item/buyedItem")
 const multer  = require('multer')
 const upload = multer({ dest: 'public/' })

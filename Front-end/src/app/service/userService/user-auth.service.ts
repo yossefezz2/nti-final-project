@@ -13,9 +13,6 @@ export class UserAuthService {
     console.log(item);
     return this.http.post('http://localhost:3000/apiItem/user/'+item,item);
   }
-  getManyPost():Observable<any> {
-    return this.http.get('http://localhost:3000/apiItem/user');
-  }
   // UpdateItem(item:any,id:any):Observable<any> {
   //   return this.http.put('http://localhost:3000/apiItem/admin/editTask/'+id,item);
   // }
