@@ -10,9 +10,11 @@ import { UserAuthService } from 'src/app/service/userService/user-auth.service';
   styleUrls: ['./single.component.css']
 })
 export class SingleComponent {
-  postId: any
+  itemId: any
 
-  constructor(private auth: AuthService, private router: Router, private activated: ActivatedRoute, private userAuth: UserAuthService) { }
+  constructor(private auth: AuthService, private router: Router, private activated: ActivatedRoute, private userAuth: UserAuthService) { 
+    
+  }
   model = {
     title: '',
     content: '',
@@ -20,7 +22,7 @@ export class SingleComponent {
     price: '',
     itemImg: '',
   }
-
+buyed=true
 
 
   handelDelete(id: any) {
@@ -37,10 +39,34 @@ export class SingleComponent {
   ngOnInit() {
     this.activated.paramMap.subscribe(params => {
       // console.log(res)
-      this.postId = params.get('id')
-      this.auth.getSinglePost(this.postId).subscribe(res => {
+      this.itemId = params.get('id')
+      this.auth.getSinglePost(this.itemId).subscribe(res => {
         this.model = res.data
       })
     })
+    this.checkItem();
   }
+  handelSubmit() {
+    this.userAuth.addItem(this.itemId).subscribe(res => {
+      console.log(res.data);
+      
+      this.router.navigateByUrl('/user')
+    })
+  }
+  checkItem() {
+    this.userAuth.checkItem(this.itemId).subscribe(res => {
+      if(res.data.length > 0){
+        this.buyed=false
+      }else{
+        this.buyed=true
+      }
+      
+    })
+  }
+  handleDelete() {
+    this.userAuth.deletedItem(this.itemId).subscribe(res => {
+      this.router.navigateByUrl('/user')
+    })
+  }
+  
 }

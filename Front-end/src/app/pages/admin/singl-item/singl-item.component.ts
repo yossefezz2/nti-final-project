@@ -19,6 +19,7 @@ export class SinglItemComponent {
     price: '',
     itemImg: '',
   }
+  buyedItem=true
   singelPost: any
   file: any
   handelDelete(id: any){

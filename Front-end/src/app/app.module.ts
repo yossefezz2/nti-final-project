@@ -16,7 +16,6 @@ import { NavbarAdminComponent } from './shared/navbar-admin/navbar-admin.compone
 import { AddItemComponent } from './pages/admin/add-item/add-item.component';
 import { DashboardAdminComponent } from './pages/admin/dashboard-admin/dashboard-admin.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
-import { AddItemUserComponent } from './pages/user/add-item-user/add-item-user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdataItemComponent } from './pages/admin/updata-item/updata-item.component';
 import { SinglItemComponent } from './pages/admin/singl-item/singl-item.component';
@@ -25,6 +24,7 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
 import { IndexUserComponent } from './pages/user/index-user/index-user.component';
 import { SingleComponent } from './pages/user/single/single.component';
+import { AllUserItemsComponent } from './pages/user/all-user-items/all-user-items.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +38,14 @@ import { SingleComponent } from './pages/user/single/single.component';
     NavbarAdminComponent,
     AddItemComponent,
     DashboardAdminComponent,
-    AddItemUserComponent,
     UpdataItemComponent,
     SinglItemComponent,
     MangeUserComponent,
     ProfileComponent,
     UpdateUserComponent,
     IndexUserComponent,
-    SingleComponent
+    SingleComponent,
+    AllUserItemsComponent,
     
   ],
   imports: [

@@ -7,7 +7,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { DashboardAdminComponent } from './pages/admin/dashboard-admin/dashboard-admin.component';
 import { AddItemComponent } from './pages/admin/add-item/add-item.component';
-import { AddItemUserComponent } from './pages/user/add-item-user/add-item-user.component';
 import { UpdataItemComponent } from './pages/admin/updata-item/updata-item.component';
 import { SinglItemComponent } from './pages/admin/singl-item/singl-item.component';
 import { MangeUserComponent } from './pages/admin/mange-user/mange-user.component';
@@ -19,6 +18,7 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { indexGuard } from './guard/canActive/index.guard';
 import { IndexUserComponent } from './pages/user/index-user/index-user.component';
 import { SingleComponent } from './pages/user/single/single.component';
+import { AllUserItemsComponent } from './pages/user/all-user-items/all-user-items.component';
 
 const routes: Routes = [
   {path: '', canActivate:[indexGuard], component:IndexComponent},
@@ -57,19 +57,19 @@ const routes: Routes = [
   ]
   },
   {
-    path: 'user', canActivate:[userActiveGuard], children: [{
+    path: 'user', canActivate:[userActiveGuard], children: [
+      {
       path: '',
       component: IndexUserComponent
-    },
-    {
-      path: 'addItem',
-      component: AddItemUserComponent
     },{
       path:'profile',
       component:ProfileComponent
     },{
       path:'single/:id',
       component:SingleComponent
+    },{
+      path:'allItemsUser',
+      component:AllUserItemsComponent
     }
   ]
   }

@@ -9,14 +9,7 @@ import { GlobalService } from 'src/app/service/global.service';
 export class IndexUserComponent {
   posts: any =[]
   constructor(private globalService: GlobalService) { }
-  handelDelete(id: any){
-    this.globalService.deletePost(id).subscribe(res => {
-        console.log(res);     
-    },()=>{
-    },()=>{
-      window.location.reload();
-    })
-  }
+  
   ngOnInit(): void {
     this.globalService.getposts().subscribe(data => {
       this.posts = data.data;
